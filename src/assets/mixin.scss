@@ -1,0 +1,73 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+}
+
+// 字体大小设置
+@for $i from 14 through 40 {
+    .fs-#{$i} {
+        font-size: #{$i}px;
+    }
+}
+
+// 边距设置
+$position: top, right, bottom, left;
+$margin-class: 't', 'r', 'b', 'l';
+
+@for $i from 1 through 40 {
+    @each $p in $position {
+        $index: index($position, $p);
+        $class: nth($margin-class, $index);
+        .m#{$class}-#{$i} {
+            margin-#{$p}: $i + px;
+        }
+    }
+}
+.lf-menu{
+    width: 50px;
+    position: relative;
+    left: -10px;
+}
+.lf-menu-delete .lf-menu-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("./src/assets/image/delete.png") no-repeat;
+    background-size: 20px;
+  }
+.lf-menu-lock .lf-menu-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("./src/assets/image/lock.png") no-repeat;
+    background-size: 20px;
+  }
+.lf-menu-unlock .lf-menu-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("./src/assets/image/unlock.png") no-repeat;
+    background-size: 20px;
+  }
+.lf-menu-edit .lf-menu-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("./src/assets/image/edit.png") no-repeat;
+    background-size: 20px;
+  }
+.lf-menu-copy .lf-menu-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("./src/assets/image/copy.png") no-repeat;
+    background-size: 20px;
+  }
